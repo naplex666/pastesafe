@@ -1,1 +1,46 @@
-{"auth":{"providers":{"anonymous":true,"googleSignIn":{"authorizedRedirectUris":["http://localhost"],"oAuthBrandDisplayName":"PasteSafe","supportEmail":"support@example.com"}}},"firestore":{"indexes":"firestore.indexes.json","rules":"firestore.rules"},"hosting":{"headers":[{"headers":[{"key":"Cache-Control","value":"max-age=3600"}],"source":"**/*.@(js|css)"}],"ignore":["firebase.json","**/.*","**/node_modules/**"],"public":"dist","rewrites":[{"destination":"/index.html","source":"**"}]},"remoteconfig":{"template":"remote_config.json"}}
+{
+  "auth": {
+    "providers": {
+      "anonymous": true,
+      "googleSignIn": {
+        "authorizedRedirectUris": [
+          "http://localhost"
+        ],
+        "oAuthBrandDisplayName": "PasteSafe",
+        "supportEmail": "support@example.com"
+      }
+    }
+  },
+  "firestore": {
+    "indexes": "firestore.indexes.json",
+    "rules": "firestore.rules"
+  },
+  "hosting": {
+    "headers": [
+      {
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=3600"
+          }
+        ],
+        "source": "**/*.@(js|css)"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "public": "dist",
+    "rewrites": [
+      {
+        "destination": "/index.html",
+        "source": "**"
+      }
+    ]
+  },
+  "remoteconfig": {
+    "template": "remote_config.json"
+  }
+}
