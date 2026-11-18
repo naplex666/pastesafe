@@ -33,7 +33,7 @@ export type EngineKind = 'on-device' | 'cloud' | 'local' | 'mock';
 
 export interface EngineBadge {
   engine: EngineKind;
-  /** e.g. "Gemini Nano 4", "gemini-flash-latest", "Local regex", "Mock". */
+  /** e.g. "Gemini Nano 4", "gemini-3.8-flash", "Local regex", "Mock". */
   model: string;
   latencyMs: number;
   /** "$0 · offline" for on-device, "~free tier" for cloud, "—" for local. */

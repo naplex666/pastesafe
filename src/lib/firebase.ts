@@ -39,7 +39,7 @@ export interface FirebaseConfig {
 }
 
 export interface RemoteConfigValues {
-  /** Cloud model used for triage. Default: gemini-flash-latest. */
+  /** Cloud model used for triage. Default: gemini-3.8-flash. */
   cloudModel: string;
   /** Default hybrid inference mode. */
   inferenceMode: string;
@@ -48,7 +48,7 @@ export interface RemoteConfigValues {
 }
 
 export const REMOTE_CONFIG_DEFAULTS: RemoteConfigValues = {
-  cloudModel: 'gemini-flash-latest',
+  cloudModel: 'gemini-3.8-flash',
   inferenceMode: 'prefer-on-device',
   onDeviceMaxChars: 8000,
 };

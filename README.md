@@ -26,7 +26,7 @@ lets the cloud do the heavy analysis — on redacted text only.
    the sweep would send the original text to the cloud and asks first.
 4. **Review & approve** the redacted text.
 5. **Analyze in cloud** — only redacted text, only on your tap. Cloud
-   Gemini (`gemini-flash-latest`) returns a structured triage: severity,
+   Gemini (`gemini-3.8-flash`) returns a structured triage: severity,
    CVSS 4.0 vector draft, category, summary, remediation steps.
 6. **Save & export** — reports (redacted text only) are stored per-user in
    Firestore, or in this browser in demo mode. Export as Markdown.
@@ -93,7 +93,7 @@ anywhere.
 Model names are read from Remote Config (`cloud_model`,
 `inference_mode`, `on_device_max_chars`) — change them without redeploying.
 Never use a Gemini 1.x/2.x model name; the default cloud model is
-`gemini-flash-latest`.
+`gemini-3.8-flash`.
 
 **Never commit `.env` or an App Check debug token.** Tokens are injected
 via gitignored env files only.
