@@ -1,0 +1,23 @@
+rules_version = '2';
+
+// PasteSafe — reports contain REDACTED text only, and each user can only
+// read/write their own reports. No public reads. No anonymous writes
+// without an authenticated uid.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId}/reports/{reportId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null
+        && request.auth.uid == userId
+        && request.resource.data.keys().hasOnly([
+          'redactedText', 'findings', 'triage', 'mode', 'createdAt'
+        ])
+        && request.resource.data.redactedText is string
+        && request.resource.data.redactedText.size() < 200000;
+    }
+    // Deny everything else by default.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
